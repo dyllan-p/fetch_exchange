@@ -5,11 +5,11 @@ url = "https://data.fixer.io/api/latest"
 rates_dict = {}
 
 
-def fetch_exchange(currency: str, base: list) -> str:
+def fetch_exchange(currency: str, base: list) -> dict:
     """
     Uses the fixer.io API to get latest exchange value for the
-    currencies provided as a list in the base argument and prints
-    the results against the currency argument.
+    currencies provided as a list in the base argument and 
+    returns them as a dict keyed by base currency.
 
     Keyword arguments:
     currency -- the currency to check exchange values against.
@@ -25,4 +25,4 @@ def fetch_exchange(currency: str, base: list) -> str:
 
 
 if __name__ == "__main__":
-    fetch_exchange(currency="", base=[])
+    print(fetch_exchange("ZAR", ["USD", "EUR", "GBP"]))
